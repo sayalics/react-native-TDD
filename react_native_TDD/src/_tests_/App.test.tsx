@@ -1,9 +1,10 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import { render } from "@testing-library/react-native";
 import App from "../App";
 
 describe( "App", () => {
     test("should render correctly",() => {
-        renderer.create(<App/>);
+        const wrapper = render(<App/>) //it is a synchronous function
+        wrapper.getByTestId("app");
     })
 })
